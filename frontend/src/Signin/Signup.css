@@ -1,0 +1,124 @@
+/* Global styles */
+.signup-body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+              url(/src/images/LandingPageBG.jpeg);
+  }
+  
+
+  
+  /* Container */
+  .signup-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  /* Form styles */
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Form group */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #003049;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f0f0f0;
+  }
+  
+  /* Row layout */
+  .form-row {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  /* Password wrapper */
+  .password-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .password-wrapper input {
+    width: 100%;
+    padding-right: 30px;
+  }
+  
+  .password-wrapper .toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Links */
+  .login-link {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .login-link a {
+    color: #003049;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Buttons */
+  .google-signup {
+    background-color: white;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .google-signup:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .sign-in {
+    background-color: #003049;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    width: 400px;
+  }
+  
+  .sign-in:hover {
+    background-color: #002533;
+  }
+  
