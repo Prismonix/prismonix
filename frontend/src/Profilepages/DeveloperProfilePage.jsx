@@ -21,7 +21,7 @@ const DeveloperProfilePage = () => {
             <FaUser />
             {sidebarOpen && <span >Profile</span>}
             </li></Link>
-            <Link to="/innovatorhome" className="side-bar-names"><li>
+            <Link to="/developerhome" className="side-bar-names"><li>
             <FaHome />
             {sidebarOpen && <span >Home</span>}
             </li></Link>

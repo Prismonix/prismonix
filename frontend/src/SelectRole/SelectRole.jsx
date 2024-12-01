@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // For navigation
 import "./SelectRole.css";
-import SmartToyIcon from "@mui/icons-material/SmartToy";
-import { Link } from "react-router-dom";
+
 
 const SelectRole = () => {
   const [role, setRole] = useState(""); // State to store the selected role
@@ -13,9 +12,9 @@ const SelectRole = () => {
     if (role === "Investor") {
       navigate("/investorprofile");
     } else if (role === "Developer") {
-      navigate("/developerprofile");
+      navigate("/developerprofilecreation");
     } else if (role === "Innovator") {
-      navigate("/innovatorprofile");
+      navigate("/innovatorprofilecreation");
     } else {
       alert("Please select a role!"); // Alert if no role is selected
     }
