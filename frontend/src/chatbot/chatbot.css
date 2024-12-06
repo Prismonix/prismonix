@@ -11,7 +11,7 @@
 
 /* Sidebar */
 .sidebar {
-  background-color: #f4f4f4;
+  background-color: black;
   width: 60px; /* Default sidebar width */
   transition: width 0.3s ease; /* Smooth transition for opening/closing */
   display: flex;

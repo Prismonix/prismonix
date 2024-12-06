@@ -1,22 +1,52 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // For navigation
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios"; // Import axios for API calls
 import "./SelectRole.css";
-
 
 const SelectRole = () => {
   const [role, setRole] = useState(""); // State to store the selected role
   const navigate = useNavigate(); // Navigation hook
 
-  const handleRoleSelection = () => {
-    // Redirect based on the selected role
-    if (role === "Investor") {
-      navigate("/investorprofile");
-    } else if (role === "Developer") {
-      navigate("/developerprofilecreation");
-    } else if (role === "Innovator") {
-      navigate("/innovatorprofilecreation");
-    } else {
-      alert("Please select a role!"); // Alert if no role is selected
+  // Check if the user is authenticated via token in localStorage
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      // If no token is found, redirect to login page (to enforce authentication)
+      alert("Please log in first!");
+      navigate("/login");
+    }
+  }, [navigate]);
+
+  const handleRoleSelection = async () => {
+    // Save selected role to localStorage before navigating to the profile creation page
+    if (role) {
+      localStorage.setItem("selectedRole", role); // Store selected role in localStorage
+    }
+
+    const token = localStorage.getItem("token");
+
+    // Send role to backend API
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/auth/save-role", 
+        { role },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      // If the role is successfully saved, navigate to the corresponding profile creation page
+      if (response.status === 200) {
+        if (role === "Investor") {
+          navigate("/investorprofilecreation");
+        } else if (role === "Developer") {
+          navigate("/developerprofilecreation");
+        } else if (role === "Innovator") {
+          navigate("/innovatorprofilecreation");
+        }
+      }
+    } catch (error) {
+      console.error("Error saving role:", error);
+      alert("Failed to save the role. Please try again.");
     }
   };
 

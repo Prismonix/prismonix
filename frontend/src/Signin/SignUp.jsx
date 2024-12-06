@@ -105,7 +105,7 @@ const Signup = () => {
 
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="first-name" style={{ color: "black" }} >First Name</label>
+              <label htmlFor="first-name" style={{ color: "white" }} >First Name</label>
               <input
                 type="text"
                 id="first-name"
@@ -113,10 +113,11 @@ const Signup = () => {
                 required
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
+                style={{ width: "165px"  }}
               />
             </div>
             <div className="form-group">
-              <label htmlFor="last-name" style={{ color: "black" }}>Last Name</label>
+              <label htmlFor="last-name" style={{ color: "white" }}>Last Name</label>
               <input
                 type="text"
                 id="last-name"
@@ -124,12 +125,13 @@ const Signup = () => {
                 required
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
+                style={{ width: "165px"  }}
               />
             </div>
           </div>
 
           <div className="form-group">
-            <label  style={{ color: "black" }} htmlFor="email">Email</label>
+            <label  style={{ color: "white"  }} htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
@@ -137,11 +139,12 @@ const Signup = () => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              style={{ width: "380px"  }}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="password" style={{ color: "black" }}> Password</label>
+            <label htmlFor="password" style={{ color: "white" }}> Password</label>
             <div className="password-wrapper">
               <input
                 type={showPassword ? "text" : "password"}
@@ -182,7 +185,7 @@ const Signup = () => {
           </div>
 
           <div className="login-link">
-            Already have an account? <Link to="/login">Login</Link>
+           Already have an account? <Link to="/login">Login</Link>
           </div>
         </form>
       </div>

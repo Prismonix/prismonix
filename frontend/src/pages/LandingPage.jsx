@@ -1,14 +1,14 @@
 import React from "react";
 import "./LandingPage.css";
 import { Link } from "react-router-dom";
+import logo from '../images/Logo.png'
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
       <header className="navbar">
         <div className="logo">
-          {/* Replace with your logo image */}
-          <img src="/logo.png" alt="Prismonix Logo" />
+        <img src={logo} alt="Prismonix Logo" style={{ width: '50px', height: 'auto' }}/>
         </div>
         <nav>
           <ul>
@@ -25,6 +25,7 @@ const LandingPage = () => {
       </header>
       <main>
         <section className="hero-section">
+          <img src={logo} alt="Prismonix Logo" style={{ width: '150px', height: 'auto' }}/>
           <h1>Welcome to Prismonix!</h1>
           <h2 className="tagline">Where Innovation Meets Opportunity</h2>
           <p>
@@ -39,7 +40,7 @@ const LandingPage = () => {
 
         <section id="about" className="about-section">
           <h2>About Us</h2>
-          <p>
+          <p className="aboutusp">
             At Prismonix, we believe innovation thrives when the right people connect. Our platform is designed to bring innovators, developers,
             and investors together, enabling the seamless exchange of ideas, expertise, and resources. Whether you have a groundbreaking idea, 
             the technical skills to bring visions to life, or the investment capabilities to fuel innovation, Prismonix is where collaboration 
@@ -48,21 +49,25 @@ const LandingPage = () => {
         </section>
 
         <section id="how-it-works" className="how-it-works-section">
-          <h2>How It Works</h2>
-          <div className="steps">
-            {[
-              "Sign Up: Join as an Innovator, Developer, or Investor.",
-              "Submit Ideas: Innovators share their concepts with clear details.",
-              "Skill Verification: Developers take skill tests to enhance credibility.",
-              "AI Matchmaking: Our system connects innovators, developers, and investors.",
-            ].map((step, index) => (
-              <div key={index} className="step">
-                <span>{index + 1}</span>
-                <p>{step}</p>
-              </div>
+            <h2 style={{ color: 'white' }}>How It Works</h2>
+            <div className="steps">
+              {[
+                "Sign Up: Join as an Innovator, Developer, or Investor.",
+                "Submit Ideas: Innovators share their concepts with clear details.",
+                "Skill Verification: Developers take skill tests to enhance credibility.",
+                "AI Matchmaking: Our system connects innovators, developers, and investors.",
+                "Collaborate: Use chat and tools to work on projects together.",
+                "Invest: Investors explore and fund ideas that align with their goals.",
+                "Grow: Learn, connect, and innovate with our community.",
+              ].map((step, index) => (
+                <div key={index} className="step">
+                  <span> </span>
+                  <p className="howitworksp"> - {step}</p>
+            </div>
             ))}
           </div>
         </section>
+
 
         <section id="features" className="features-section">
           <h2>Features</h2>
@@ -88,21 +93,9 @@ const LandingPage = () => {
           <h2>Contact Us</h2>
           <p>Reach out to us for any queries, support, or feedback.</p>
           <ul>
-            <li>Email: <a href="mailto:support@Prismonix.com">support@Prismonix.com</a></li>
-            <li>Phone: <a href="tel:+911234567890">+91-123-456-7890</a></li>
-            <li>Address: Prismonix HQ, 2nd Floor, Innovation Tower, Bengaluru, India</li>
+            <li>Email: <a href="mailto:prismonix06@gmail.com">prismonix06@gmail.com</a></li>
+            <li>Phone: <a href="tel:+919392608599">+919392608599</a></li>
           </ul>
-          <div className="social-links">
-            <a href="https://linkedin.com/Prismonix" aria-label="Visit LinkedIn">
-              <i className="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://twitter.com/Prismonix" aria-label="Visit Twitter">
-              <i className="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://instagram.com/Prismonix" aria-label="Visit Instagram">
-              <i className="fab fa-instagram"></i> Instagram
-            </a>
-          </div>
         </section>
       </main>
     </div>

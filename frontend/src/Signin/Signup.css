@@ -7,13 +7,13 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-            url(/src/images/LandingPageBG.jpeg);
+  background-image: url(/src/images/howitworks.png);
+  opacity:0.8;
 }
 
   /* Container */
   .signup-container {
-    background: white;
+    background: ffffff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -78,10 +78,11 @@
   .login-link {
     font-size: 14px;
     text-align: center;
+    color:white;
   }
   
   .login-link a {
-    color: #003049;
+    color:  #003049;
     text-decoration: none;
     font-weight: bold;
   }
@@ -91,7 +92,6 @@
     background-color: white;
     color: #555;
     border: 1px solid #ddd;
-    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -105,7 +105,7 @@
   }
   
   .sign-in {
-    background-color: #003153;
+    background-color: #003049;
     color: white;
     border: none;
     padding: 10px;
@@ -120,7 +120,7 @@
     background-color: #002533;
   }
   .heading2{
-    color:black;
+    color:white;
   }
 
 

@@ -7,16 +7,17 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url(/src/images/selectrole.jpg);
    
 }
   
   
   /* Container */
   .SelectRole-container {
-    background: white;
+    background: ffffff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   
     width: 400px;
     text-align: center;
   }
@@ -28,9 +29,9 @@
   }
   
   /* Heading */
-  .login-container h2 {
+  .SelectRole-container h2 {
     font-size: 1.5rem;
-    color: #003049;
+    color: white;
     margin-bottom: 20px;
   }
   
@@ -51,7 +52,7 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #003049;
+    background-color: #002533;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -60,7 +61,7 @@
   }
   
   .next-button:hover {
-    background-color: #002533;
+    background-color: ##003049;
   }
   .role-dropdown:hover {
     border-color: #002533;

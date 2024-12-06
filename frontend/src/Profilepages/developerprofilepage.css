@@ -2,12 +2,17 @@
 .developerprofilepage-body{
     margin: 0;
     font-family: "Arial", sans-serif;
+    ackground-image: url(/src/images/bg.jpg);
   }
 .profile-container {
     display: flex;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-image: 
+    url(/src/images/innovatorbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* Sidebar */

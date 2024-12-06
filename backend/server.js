@@ -20,7 +20,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Configure express-session for session management
+// Configure express-session for session management (if required)
 app.use(
   session({
     secret: process.env.SESSION_SECRET || 'defaultSecretKey', // Replace with a strong secret key
@@ -33,11 +33,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Passport configuration for Google OAuth
+// Passport configuration for Google OAuth (assuming it's configured in config/passport)
 require('./config/passport');
 
 // Routes
-app.use('/auth', require('./routes/auth'));
+app.use('/auth', require('./routes/auth')); // Authentication routes
+app.use('/upload', require('./routes/upload'));
+// Example protected route to demonstrate authentication middleware
 
 // Default route for unmatched paths
 app.use((req, res) => {

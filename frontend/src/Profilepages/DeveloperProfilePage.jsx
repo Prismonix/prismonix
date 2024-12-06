@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
+import axios from 'axios';
 import { FaHome, FaBell, FaComments, FaCog, FaUser, FaBars, FaUsers, } from "react-icons/fa";
 import "./developerprofilepage.css";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
@@ -6,7 +7,54 @@ import { Link } from "react-router-dom";
 
 const DeveloperProfilePage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); // Error state for error messages
 
+  // Fetch user data function
+  const fetchUserData = async () => {
+    const token = localStorage.getItem('token'); // Retrieve token from localStorage (or wherever you store it)
+
+    if (!token) {
+      setError('No token found, please login.'); // Error if no token
+      setLoading(false);
+      return;
+    }
+
+    try {
+      // Sending GET request to /me route
+      const response = await axios.get('http://localhost:5000/auth/me', {
+        headers: {
+          Authorization: `Bearer ${token}`, // Sending token in the Authorization header
+        },
+      });
+
+      setUser(response.data.user); // Set the user data received from backend
+      setLoading(false); // Stop loading state
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      setError('Failed to fetch user data.'); // Set error message if there's an issue
+      setLoading(false);
+    }
+  };
+
+  // Fetch user data on component mount
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; // Display loading state while fetching user data
+  }
+
+  if (error) {
+    return <div>{error}</div>; // Display error message if there was an issue fetching user data
+  }
+
+  // Ensure `user` is available before rendering user details
+  if (!user) {
+    return <div>User data not available</div>;
+  }
   return (
     <div className="profile-container">
       {/* Sidebar */}
@@ -57,67 +105,122 @@ const DeveloperProfilePage = () => {
             alt="Profile"
           />
           <div>
-            <h1>Kumar Agarwal</h1>
-            <p>UI/UX Intern at Rajiv Gandhi University of Knowledge Technologies</p>
+            <h1 style={{color:"white"}}>{user.firstName} {user.lastName}</h1>
+            <p>{user.role || 'Not defined'}</p>
+            <p>{user.definesYou || 'Not specified'}</p>
+            <p>{user.location || 'Not provided'}
+
+            </p>
           </div>
         </div>
 
         {/* Sections */}
         <div className="section">
-          <h2>Education</h2>
-          <div className="item">
-            <span>RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES</span>
-            <button className="edit-button">Edit</button>
-          </div>
-          <div className="item">
-            <span>Dr.Kishores Ratnam EM High School</span>
-            <button className="edit-button">Edit</button>
-          </div>
-        </div>
-
-        <div className="section">
-          <h2>Skills</h2>
+          <h2 style={{textAlign:'left'}}>Skills</h2>
           <div className="item">
             <span>UI/UX</span>
-            <button className="edit-button">Edit</button>
           </div>
           <div className="item">
             <span>User Interface Design</span>
-            <button className="edit-button">Edit</button>
+          </div>
+        </div>
+        <div className="section">
+          <h2 style={{textAlign:'left'}}>Experience</h2>
+          <div className="item">
+            <span>Job Title</span>
+          </div>
+          <div className="item">
+            <span>Company Name</span>
+          </div>
+          <div className="item">
+            <span>Duration</span>
+          </div>
+        </div>
+        <div className="section">
+          <h2 style={{textAlign:'left'}}>Projects</h2>
+          <div className="item">
+            <span>Project Title</span>
+          </div>
+          <div className="item">
+            <span>Description</span>
+          </div>
+          <div className="item">
+            <span>Technologies Used</span>
+          </div>
+          <div className="item">
+            <span>Role In Project</span>
+          </div>
+        </div>
+        <div className="section">
+          <h2 style={{textAlign:'left'}}>Education</h2>
+          <div className="item">
+            <span>Field of Study</span>
+          </div>
+          <div className="item">
+            <span>Institute Name</span>
+          </div>
+          <div className="item">
+            <span>Duartion</span>
+          </div>
+          <div className="item">
+            <span>Grade</span>
+          </div>
+        </div>
+        <div className="section">
+          <h2 style={{textAlign:'left'}}>Certifications</h2>
+          <div className="item">
+            <span>Certificaate Name</span>
+          </div>
+          <div className="item">
+            <span>Issuing Organization</span>
+          </div>
+          <div className="item">
+            <span>Certificate Pdf</span>
+          </div>
+        </div>
+        <div className="section">
+          <h2 style={{textAlign:'left'}}>Achievements</h2>
+          <div className="item">
+            <span>Achievement Title</span>
+          </div>
+          <div className="item">
+            <span>Description</span>
+          </div>
+          <div className="item">
+            <span>Date Recieved</span>
           </div>
         </div>
 
         <div className="section">
-          <h2>Experience</h2>
+          <h2 style={{textAlign:'left'}}>Collaboration Preferences</h2>
           <div className="item">
-            <span>CO-IN, UI/UX Engineer</span>
-            <button className="edit-button">Edit</button>
+            <span>Preffered Environment Type</span>
           </div>
           <div className="item">
-            <span>SSIT, UI/UX Intern</span>
-            <button className="edit-button">Edit</button>
-          </div>
-        </div>
-
-        <div className="section">
-          <h2>Projects</h2>
-          <div className="item">
-            <span>Health Care Management of Pets</span>
-            <button className="edit-button">Edit</button>
+            <span>Availability</span>
           </div>
           <div className="item">
-            <span>Online Food Delivery App to Remote Areas</span>
-            <button className="edit-button">Edit</button>
+            <span>Looking For</span>
           </div>
         </div>
 
         <div className="section">
-          <h2>Collaboration Preferences</h2>
+          <h2 style={{textAlign:'left'}}>Intrested Areas</h2>
           <div className="item">
-            <span>UI/UX Designer, Web Development Projects</span>
-            <button className="edit-button">Edit</button>
+            <span>Field of Intrest</span>
+          </div>
+          <div className="item">
+            <span>Preffered Industries</span>
           </div>
         </div>
+
+        <div className="section">
+          <h2 style={{textAlign:'left'}}>Resume</h2>
+          <div className="item">
+            <span>Upload Resume</span>
+          </div>
+        </div>
+
       </div>
     </div>
   );

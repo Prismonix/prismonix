@@ -4,15 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url(/src/images/LandingPageBG.jpeg);
+  background-image: 
+    url(/src/images/innovatorbg.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 .innovator-profile-container {
-  background: white;
+  background: ffffff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -30,11 +30,14 @@
   width: 400px;
   max-height: 90%;
   overflow-y: auto;
+  color:white;
 }
-
+.innovator-profile-form{
+  color:#000; 
+}
 .innovator-profile-form h2 {
   font-size: 24px;
-  color: #003049;
+  color: #fff;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -45,7 +48,7 @@
 
 .form-group label {
   font-weight: bold;
-  color: #003049;
+  color: #fff;
   display: block;
   margin-bottom: 5px;
   text-align: left;
@@ -57,7 +60,7 @@
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background: #f0f0f0;
+  background: #fff;
   font-size: 14px;
 }
 

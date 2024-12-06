@@ -3,7 +3,7 @@
 .landing-body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #fff;
+  background: black;
   background-size: cover; /* Static background */
   color: #fff;
   overflow-x: hidden;
@@ -20,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background: #003153;
+  background: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -63,7 +63,7 @@
 .hero-section {
   text-align: center;
   padding: 100px 20px;
-  background: url(/src/images/LandingPageBG.jpeg) center/cover no-repeat, rgba(0, 0, 0, 0.5);
+  background: url(/src/images/landing.jpg) center/cover no-repeat, rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;
   color: #fff;
 }
@@ -78,7 +78,7 @@
   font-size: 1.5rem;
   margin-bottom: 20px;
   
-  color: #e74c3c;
+  color:#2596be;
 }
 
 .hero-section p {
@@ -89,7 +89,7 @@
 
 .cta-button {
   padding: 15px 30px;
-  background: #e74c3c;
+  background:#2c54bc;
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -99,7 +99,7 @@
 }
 
 .cta-button:hover {
-  background: #c0392b;
+  background: #003153;
 }
 
 /* Section Styles */
@@ -107,7 +107,7 @@ section {
   padding: 80px 20px;
 }
 
-.about-section, .features-section, .contact-section {
+.about-section,.how-it-works-section, .features-section, .contact-section {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
   padding: 50px;
@@ -115,7 +115,7 @@ section {
 }
 
 .about-section h2, .features-section h2, .contact-section h2 {
-  font-size: 2.5rem;
+  color:white;
   margin-bottom: 20px;
 }
 
@@ -187,8 +187,19 @@ section {
   opacity: 0.3;
 }
 .about-section{
-  background: url(/src/images/LandingPageBG.jpeg) center/cover no-repeat, rgba(0, 0, 0, 0.5);
+  background: url(/src/images/aboutus.jpg) center/cover no-repeat, rgba(0, 0, 0, 0.5);
 }
 .how-it-works-section{
-  background: url(/src/images/LandingPageBG.jpeg) center/cover no-repeat, rgba(0, 0, 0, 0.5);
+  background: url(/src/images/howitworks.png) center/cover no-repeat, rgba(0, 0, 0, 0.5);
+}
+.howitworksp{
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  text-align:center;
+}
+.aboutusp{
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
 }

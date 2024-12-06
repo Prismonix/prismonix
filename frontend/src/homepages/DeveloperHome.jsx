@@ -4,7 +4,8 @@ import { FaHome, FaBell, FaComments, FaCog, FaUser, FaUsers, FaBars } from "reac
 import InfiniteScroll from "react-infinite-scroll-component";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import { Link } from "react-router-dom";
-
+import logo from '../images/Logo.png'
+import innomateAi from'../images/innomateAi.jpg'
 
 const DeveloperHome = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar open/close state
@@ -34,46 +35,46 @@ const DeveloperHome = () => {
             </button>
         </div>
         <ul>
-            <Link to="" className="side-bar-names"><li>
+            <Link to="/developerprofilepage" className="side-bar-names"><li>
             <FaUser />
-            {sidebarOpen && <span >Profile</span>}
+            {sidebarOpen && <span style={{color:"white"}}>Profile</span>}
             </li></Link>
             <Link to="/developerhome" className="side-bar-names"><li>
             <FaHome />
-            {sidebarOpen && <span >Home</span>}
+            {sidebarOpen && <span style={{color:"white"}}>Home</span>}
             </li></Link>
             <li>
             <FaBell />
-            {sidebarOpen && <span >Notifications</span>}
+            {sidebarOpen && <span style={{color:"white"}}>Notifications</span>}
             </li>
             <Link to="/messaging" className="side-bar-names"><li>
             <FaComments />
-            {sidebarOpen && <span >Messages</span>}
+            {sidebarOpen && <span style={{color:"white"}}>Messages</span>}
             </li></Link>
             <li>
             <FaUsers />
-            {sidebarOpen && <span >Circle</span>}
+            {sidebarOpen && <span style={{color:"white"}}>Circle</span>}
             </li>
             <li>
             <FaCog />
-            {sidebarOpen && <span >Settings</span>}
+            {sidebarOpen && <span style={{color:"white"}} >Settings</span>}
             </li>
-            <Link to="/chatbot" className="side-bar-names"><li>
+            <Link to="/developerchatbot" className="side-bar-names"><li>
            <SmartToyIcon/>
-              {sidebarOpen && <span >InnoMate</span>}
+              {sidebarOpen && <span style={{color:"white"}} >InnoMate</span>}
             </li></Link>
         </ul>
     </aside>
 
 
       {/* Main Content */}
-      <main className="main-content">
+      <main className="dev-main-content">
         {/* Header */}
         <header className="header">
-          <h2>Prismonix</h2>
+            <img src={logo} alt="Prismonix Logo" style={{ width: '30px', height: 'auto', marginLeft:"20px"}}/>
           <input type="text" placeholder="Search" className="search-bar" />
           <button className="chat-btn">
-            <SmartToyIcon />
+          <img src={innomateAi} style={{ width: '40px', height: 'auto'}} />
           </button>
         </header>
 

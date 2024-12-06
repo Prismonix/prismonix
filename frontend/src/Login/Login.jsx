@@ -30,7 +30,7 @@ const Login = () => {
       if (response.ok) {
         localStorage.setItem("token", data.token);
         alert("Login successful! Redirecting to home page...");
-        window.location.href = "/home";
+        window.location.href = "/developerhome";
       } else {
         setErrorMessage(data.message || "Failed to log in.");
       }
@@ -53,7 +53,7 @@ const Login = () => {
         if (data.token) {
           localStorage.setItem("token", data.token);
           alert("Google login successful! Redirecting to home page...");
-          window.location.href = "/home";
+          window.location.href = "/developerhome";
         } else {
           setErrorMessage(data.message || "Failed to log in with Google.");
         }
@@ -102,12 +102,14 @@ const Login = () => {
           <p className="join-text">
             Don't have an account? <Link to="/signup">Join us</Link>
           </p>
-          <GoogleLogin
-            onSuccess={handleGoogleLogin}
-            onError={() =>
-              setErrorMessage("Google login failed. Please try again.")
-            }
-          />
+          <div className="google-login">
+            <GoogleLogin
+              onSuccess={handleGoogleLogin}
+              onError={() =>
+                setErrorMessage("Google login failed. Please try again.")
+              }
+            />
+          </div>
           <button type="submit" className="login-button">
             Login
           </button>

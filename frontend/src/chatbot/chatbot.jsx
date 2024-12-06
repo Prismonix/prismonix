@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './chatbot.css';
 import { Link } from "react-router-dom";
-import { FaHome, FaBell, FaComments, FaCog, FaUser, FaUsers, FaBars } from "react-icons/fa";
+import { FaHome, FaBell, FaComments, FaCog, FaUser, FaUsers, FaBars,FaPaperPlane  } from "react-icons/fa";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 
 function Chatbot() {
@@ -47,18 +47,18 @@ function Chatbot() {
 
   return (
     <div className="chatbot">
-      <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
-        <div className="menu-section">
+      <aside className={`sidebar ${sidebarOpen ? "open" : ""}`} style={{backgroundColor:'black'}}>
+        <div className="menu-section" >
           <button className="menu-btn" onClick={() => setSidebarOpen(!sidebarOpen)}>
             <FaBars />
           </button>
         </div>
-        <ul>
-          <Link to="/developerprofilepage" className="side-bar-names"><li>
+        <ul >
+          <Link to="/innovatorprofilepage" className="side-bar-names"><li>
             <FaUser />
             {sidebarOpen && <span>Profile</span>}
           </li></Link>
-          <Link to="/developerhome" className="side-bar-names"><li>
+          <Link to="/innovatorhome" className="side-bar-names"><li>
             <FaHome />
             {sidebarOpen && <span>Home</span>}
           </li></Link>
@@ -86,6 +86,10 @@ function Chatbot() {
               {sidebarOpen && <span>InnoMate</span>}
             </li>
           </Link>
+          <Link to="/ideasubmissionform " className="side-bar-names"><li>
+                <FaPaperPlane />
+                {sidebarOpen && <span style={{ color: 'white', marginLeft: '8px' }}>Post</span>}
+            </li></Link>
         </ul>
       </aside>
       <div className="chat-container">

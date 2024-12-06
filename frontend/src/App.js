@@ -11,6 +11,10 @@ import DeveloperProfilePage from "./Profilepages/DeveloperProfilePage";
 import DeveloperHome from "./homepages/DeveloperHome";
 import InnovatorProfileCreation from "./InnovatorProfileCreation/InnovatorProfileCreation";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import InnovatorHome from "./Home/InnovatorHome";
+import UploadPost from "./uploadposts/UploadPost";
+import IdeaSubmissionForm from "./Ideasubmission/idea-submission-form";
+import DeveloperChatbot from "./developerchatbot/developerchatbot";
 const App = () => {
   const location = useLocation();
 
@@ -35,7 +39,17 @@ const App = () => {
       document.body.classList.add("developerprofilepage-body");
     }else if (location.pathname === "/innovatorprofilecreation") {
       document.body.classList.add("innovatorprofilecreation-body");
+    }else if (location.pathname === "/innovatorhome") {
+      document.body.classList.add("innovatorhome-body");
+    }else if (location.pathname === "/ideasubmissionform") {
+      document.body.classList.add("ideasubmissionform-body");
+    }else if (location.pathname === "/messaging") {
+      document.body.classList.add("messaging-body");
+    }else if (location.pathname === "/developerchatbot") {
+      document.body.classList.add("developerchatbot-body");
     }
+    
+    
   }, [location]);
 
   return (
@@ -51,6 +65,10 @@ const App = () => {
           <Route path="/chatbot" element={<Chatbot/>}/>
           <Route path="/developerprofilepage" element={<DeveloperProfilePage/>}/>
           <Route path="/innovatorprofilecreation"element={<InnovatorProfileCreation/>}/>
+          <Route path="/innovatorhome" element={<InnovatorHome/>}/>
+          <Route path="/uploadpost" element={<UploadPost/>}/>
+          <Route path="/ideasubmissionform" element={<IdeaSubmissionForm/>}/>
+          <Route path="/developerchatbot" element={<DeveloperChatbot/>}/>
         </Routes>
     </GoogleOAuthProvider>
   );
